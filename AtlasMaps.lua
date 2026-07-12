@@ -677,8 +677,10 @@ AtlasMaps = {
 		{ GREY.."2) "..AL["Kan'za the Seer"] };
 		{ GREY.."3) "..AL["Battlemaster Ubukaz"] };
 		{ GREY.."4) "..AL["Hailar the Frigid"] };
-		-- { "" };
-		-- { GREY..INDENT..AL["Trash Mobs"] };
+		{ GREN.."1') "..AL["Ranix Crackbolt"] };
+		{ GREN.."2') "..AL["Archaeologist Evenpike"] };
+		{ GREN.."3') "..AL["Tablet of Kaz'gan"] };
+
 	};
 	DragonmawRetreat = {
 		ZoneName = { AL["Dragonmaw Retreat"], -1 };

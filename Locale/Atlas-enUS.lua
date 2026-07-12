@@ -1454,6 +1454,9 @@ Dependencies: AceLibrary, AceLocale-2.2
 	["Kan'za the Seer"] = true,
 	["Battlemaster Ubukaz"] = true,
 	["Hailar the Frigid"] = true,
+	["Ranix Crackbolt"] = true,
+	["Archaeologist Evenpike"] = true,
+	["Tablet of Kaz'gan"] = true,
 	
 	["Windhorn Canyon"] = true,
 	["Pathun Duskhide"] = true,

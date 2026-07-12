@@ -7,7 +7,7 @@
 ## Notes-zhCN: 副本地图浏览器
 ## Notes-esES: Navegador de Mapas de Mazmorras.
 ## Notes-ruRU: Обозреватель подземелий.
-## Version: 1.14.0
+## Version: 1.14.1
 ## X-Date: 22.01.2024
 ## Author: Shahopriest
 ## X-Email: m4r3lk4@gmail.com
