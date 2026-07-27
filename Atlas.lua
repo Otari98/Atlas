@@ -36,7 +36,7 @@ ATLAS_INST_ENT_DROPDOWN = {};
 
 ATLAS_NUM_LINES = 20;
 ATLAS_CUR_LINES = 0;
-ATLAS_ENTRY_HEIGHT = 18;
+ATLAS_ENTRY_HEIGHT = 20;
 ATLAS_SCROLL_LIST = {};
 
 ATLAS_DATA = {};
@@ -567,7 +567,7 @@ function Atlas_Refresh()
 			end
 		end
 	end
-
+	AtlasScrollBar:SetVerticalScroll(0);
 	AtlasScrollBar_Update();
 	--deal with the switch to entrance/instance button here
 	--only display if appropriat
@@ -854,11 +854,11 @@ function Atlas_OnClick()
 end
 
 function AtlasScrollBar_Update()
-	GameTooltip:Hide();
-	local line, lineplusoffset;
+	local offset = FauxScrollFrame_GetOffset(AtlasScrollBar) or 0;
+	local lineplusoffset;
 	FauxScrollFrame_Update(AtlasScrollBar, ATLAS_CUR_LINES, ATLAS_NUM_LINES, ATLAS_ENTRY_HEIGHT);
 	for line = 1, ATLAS_NUM_LINES do
-		lineplusoffset = line + FauxScrollFrame_GetOffset(AtlasScrollBar);
+		lineplusoffset = line + offset;
 		if (lineplusoffset <= ATLAS_CUR_LINES) then
 			getglobal("AtlasEntry" .. line .. "_Text"):SetText(ATLAS_SCROLL_LIST[lineplusoffset]);
 			getglobal("AtlasEntry" .. line):Show();
