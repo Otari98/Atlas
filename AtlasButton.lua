@@ -22,30 +22,34 @@
 --]]
 
 function AtlasButton_OnClick()
-	Atlas_Toggle();
+	if arg1 == "MiddleButton" then
+		AtlasOptions_Toggle();
+	else
+		Atlas_Toggle();
+	end
 end
 
 function AtlasButton_Init()
 	if (AtlasOptions.AtlasButtonShown) then
-		AtlasButtonFrame:Show();
+		AtlasButton:Show();
 	else
-		AtlasButtonFrame:Hide();
+		AtlasButton:Hide();
 	end
 end
 
 function AtlasButton_Toggle()
-	if (AtlasButtonFrame:IsVisible()) then
-		AtlasButtonFrame:Hide();
+	if (AtlasButton:IsVisible()) then
+		AtlasButton:Hide();
 		AtlasOptions.AtlasButtonShown = false;
 	else
-		AtlasButtonFrame:Show();
+		AtlasButton:Show();
 		AtlasOptions.AtlasButtonShown = true;
 	end
 	AtlasOptions_Init();
 end
 
 function AtlasButton_UpdatePosition()
-	AtlasButtonFrame:SetPoint(
+	AtlasButton:SetPoint(
 		"TOPLEFT",
 		"Minimap",
 		"TOPLEFT",
@@ -68,18 +72,14 @@ function AtlasButton_BeingDragged()
 end
 
 function AtlasButton_SetPosition(v)
-	if (v < 0) then
-		v = v + 360;
-	end
-
+	if (v < 0) then v = v + 360; end
 	AtlasOptions.AtlasButtonPosition = v;
 	AtlasButton_UpdatePosition();
 end
 
 function AtlasButton_OnEnter()
 	GameTooltip:SetOwner(this, "ANCHOR_LEFT");
-	GameTooltip:SetText("Atlas");
-	GameTooltipTextLeft1:SetTextColor(1, 1, 1);
+	GameTooltip:SetText("Atlas", 1, 1, 1);
 	GameTooltip:AddLine(ATLAS_BUTTON_TOOLTIP_HINT);
 	GameTooltip:Show();
 end
